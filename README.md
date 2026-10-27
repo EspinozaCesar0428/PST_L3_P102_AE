@@ -41,7 +41,7 @@ La guía destina 105 minutos a trabajar con el entorno ya preparado.
 
 
 ### 1. Modificación de la Ruta de Salud (Parte 5)
-* **Archivo modificado:** `backend/app/routes.py`[cite: 5]
+* **Archivo modificado:** `backend/app/routes.py`
 * **Descripción:** Se añadió el campo `"laboratorio": 3` dentro del diccionario que retorna la función del endpoint `/salud`. Al realizar la petición GET, la respuesta JSON muestra de forma correcta el estado actual junto con el número de práctica correspondiente[cite: 5].
 
 ### 2. Implementación del Reto: Promedio de Lecturas (`GET /lecturas/promedio`)
@@ -49,4 +49,4 @@ La guía destina 105 minutos a trabajar con el entorno ya preparado.
   * Se creó el endpoint `GET /promedio` que acepta un parámetro de consulta `n` (con valor por defecto de 3)[cite: 5].
   * En el servicio (`services.py`), se programó la validación para verificar si existen registros en la memoria (`store.lecturas`). Si la lista está vacía, se dispara una excepción HTTP 404 con un mensaje explicativo[cite: 5].
   * Se utilizan las últimas `n` lecturas mediante un corte de lista (`store.lecturas[-n:]`), calculando de forma independiente los promedios de temperatura y humedad, y redondeando ambos resultados a 2 decimales[cite: 5].
-  * Se implementaron validaciones de rango con `Query` para asegurar que `n` se encuentre estrictamente entre 1 y 100, devolviendo un error HTTP 422 en caso de incumplimiento[cite: 5].
+  * Se implementaron validaciones de rango con `Query` para asegurar que `n` se encuentre estrictamente entre 1 y 100, devolviendo un error HTTP 422 en caso de incumplimiento.
